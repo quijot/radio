@@ -63,5 +63,6 @@ Dentro de _.default.list_ está indicado cómo agregar la información:
 
 # Licencia
 
-Leer LICENSE.
-
+__radio__ se encuentra bajo los términos de la Beer-ware License (Revision 42).
+Para mayor información leer
+[LICENSE](https://raw.github.com/quijot/radio/master/LICENSE).
