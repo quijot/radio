@@ -1,0 +1,79 @@
+#!/usr/bin/env python
+# -*- coding: UTF-8 -*- 
+# ----------------------------------------------------------------------------
+# "THE BEER-WARE LICENSE" (Revision 42):
+# Santiago Pestarini <santiagonob@gmail.org> escribió este archivo. Siempre
+# que mantengas este aviso, podés hacer lo que quieras con este material. Si
+# algún día nos encontramos, y pensás que este material lo vale, podés
+# invitarme una cerveza en agradecimiento.
+# ----------------------------------------------------------------------------
+
+#
+# radio, un script python para escuchar la radio con mplayer
+#
+
+from sys import argv
+from os import walk
+from subprocess import call
+
+#
+# actualiza el diccionario de radios buscando los archivos .list en ./lists
+#
+
+radios = {
+# 'radio_id': ('radio_name', 'radio_url'),
+}
+
+lists_path = './lists/'
+lists_extension = '.list'
+lists = []
+
+# arma lista de archivos .list
+for base, dirs, files in walk(lists_path):
+  for name in files:
+    if name.endswith(lists_extension):
+      lists.append(name)
+# ordena alfabeticamente los nombres de los .list
+lists.sort()
+
+# actualiza el dict radios con la info de todos los .list
+for l in lists:
+  f = open(lists_path + l)
+  for entry in f:
+    if not entry.startswith('#') and len(entry.strip()) != 0 \
+      and entry.find(':') != -1 and entry.find('|') != -1 :
+      radio_id = entry.partition(':')[0].strip()
+      radio_info = entry.partition(':')[2].strip()
+      radio_name = radio_info.partition('|')[0].strip()
+      radio_url = radio_info.partition('|')[2].strip()
+      radios.update({radio_id : (radio_name, radio_url)})
+  f.close()
+
+#
+# imprimir información de licencia
+#
+
+print 'radio, un script python para escuchar la radio con mplayer'
+lic = open('LICENSE')
+print lic.read()
+
+#
+# si falta algo imprime ayuda, si no "prende la radio"
+#
+
+if len(argv) < 2 or radios.get(argv[1],'error') == 'error':
+  print 'Uso:\n\
+    $ radio <radio_id>\n\
+  donde <radio_id> debe estar en la siguiente lista:\n'
+  print '(Para agregar radios a la lista, lea README)\n'
+  lista = radios.keys()
+  lista.sort()
+  for i in lista:
+    print i, '\n  ', radios[i][0], '(' + radios[i][1] + ')'
+  print "\n(Para 'apagar la radio', presione Ctrl+C)"
+else:
+  radio_id = argv[1]
+  url = 1
+  call(['mplayer', '-af', 'lavcresample=44100', '-cache', '32', \
+    radios[radio_id][url]])
+
