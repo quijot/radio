@@ -10,39 +10,48 @@ Descargar y descomprimir.
 
 GNU/Linux, python, mplayer. (Quizás también funcione en win y/o mac.)
 
-# Uso
+## Archivos
 
-    $ ./radio <radio_id>
-
-donde <radio_id> debe estar en alguna lista (archivos _.list_ en el directorio __lists__).
-
-(Para _apagar la radio_, presione _Ctrl+C_.)
-
-Si ejecuta
-
-    $ ./radio
-
-se imprime la ayuda.
-
-## Listas de radios
-
-Se administran en archivos con extensión _.list_.
-
-Dentro del directorio donde está __radio__, debería encontrarse un directorio llamado _lists_ y allí dentro, un archivo oculto llamado _.default.list_. Si tiene el comando _tree_ instalado, pruebe, ubicado dentro del directorio donde está __radio__
+Si tiene el comando _tree_ instalado, pruebe, ubicado dentro del directorio
+ donde está __radio__
 
     $ tree -a
         .
         ├── LICENSE
         ├── lists
-        │   ├── .default.list
-        │   └── ar.list
+        │   ├── .default.list
+        │   └── ar.list
         ├── radio
         ├── radio_conf.py
         └── README.md
 
+# Uso
+
+## Escuchar la radio
+
+    $ ./radio <radio_id>
+
+donde \<radio\_id\> debe estar en alguna lista (archivos __.list__ en el
+ directorio __lists__). Para _apagar la radio_, presione _Ctrl+C_.
+
+Si ejecuta
+
+    $ ./radio
+
+se __imprime la ayuda__ y la lista de radios disponible.
+
+## Listas de radios
+
+Se administran en archivos con extensión _.list_.
+
+Dentro del directorio donde está __radio__, debería encontrarse un directorio
+ llamado _lists_ y allí dentro, un archivo oculto llamado _.default.list_.
+
 ### Agregar radios
 
-Puede agregar información de radios puede editar _.default.list_ o agregar archivos _.list_ con el mismo formato interno de _.default.list_, por ejemplo, se adjunta también _ar.list_ con radios de Argentina.
+Para agregar información de radios puede editar _.default.list_ o agregar
+ archivos _.list_ con el mismo formato interno de _.default.list_, por ejemplo,
+ se adjunta también _ar.list_ con radios de Argentina.
 
 Dentro de _.default.list_ está indicado cómo agregar la información:
 
