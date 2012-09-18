@@ -55,11 +55,11 @@ Para agregar información de radios puede editar _.default.list_ o agregar
 
 Dentro de _.default.list_ está indicado cómo agregar la información:
 
-Para agregar una radio agregue una línea:
-    radio_id: radio_name|radio_url
-
-Por ejemplo:
-    ahijuna: Radio Ahijuna FM 94.7|mms://200.110.208.108/ahijunafm
+    Para agregar una radio agregue una línea:
+        radio_id: radio_name|radio_url
+    
+    Por ejemplo:
+        ahijuna: Radio Ahijuna FM 94.7|mms://200.110.208.108/ahijunafm
 
 # Licencia
 
