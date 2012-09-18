@@ -52,3 +52,7 @@ Para agregar una radio agregue una línea:
 Por ejemplo:
     ahijuna: Radio Ahijuna FM 94.7|mms://200.110.208.108/ahijunafm
 
+# Licencia
+
+Leer LICENSE.
+
