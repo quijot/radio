@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>radio by quijot</title>
+    <title>Radio by quijot</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
@@ -16,8 +16,8 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1 class="header">./radio</h1>
-        <p class="header">radio, un script python para escuchar la radio con mplayer</p>
+        <h1 class="header">Radio</h1>
+        <p class="header">un script python para escuchar la radio con mplayer</p>
 
         <ul>
           <li class="download"><a class="buttons" href="https://github.com/quijot/radio/zipball/master">Download ZIP</a></li>
@@ -36,16 +36,27 @@
 
 <h1>Instalación</h1>
 
-<p>Descargar y descomprimir.</p>
+<p><a href="https://github.com/quijot/radio/zipball/master">Descargar</a> y descomprimir.</p>
 
 <h2>Requisitos previos</h2>
 
-<p>GNU/Linux, python, mplayer. (Quizás también funcione en win y/o mac.)</p>
+<p><a href="http://www.python.org/">python</a>, <a href="http://www.mplayer2.org/">mplayer</a>. Por lo tanto, <strong>radio es multiplataforma</strong>.</p>
+
+<p>Para instalar ambos en GNU/Linux (reemplazar apt-get con el <a href="https://es.wikipedia.org/wiki/Categor%C3%ADa:Gestores_de_paquetes_Linux">gestor de paquetes de tu distribución</a>):</p>
+
+<pre><code># en Debian, Ubuntu y Mint (con sudo)
+$ apt-get install python mplayer2
+</code></pre>
+
+<p>En Windows: descargar, guardar, siguiente, siguiente, etc...</p>
+
+<p>Si tenés una Mac sos alto gato. Y si tenés otra cosa, no necesitás de esto.</p>
 
 <h2>Archivos</h2>
 
-<p>Si tiene el comando <em>tree</em> instalado, pruebe, ubicado dentro del directorio
- donde está <strong>radio</strong></p>
+<blockquote>
+<p>Ejecute el comando <em>tree</em> ubicado dentro del directorio donde está <strong>radio</strong></p>
+</blockquote>
 
 <pre><code>$ tree -a
     .
@@ -54,7 +65,6 @@
     │   ├── .default.list
     │   └── ar.list
     ├── radio
-    ├── radio_conf.py
     └── README.md
 </code></pre>
 
@@ -66,29 +76,29 @@
 </code></pre>
 
 <p>donde &lt;radio_id&gt; debe estar en alguna lista (archivos <strong>.list</strong> en el
- directorio <strong>lists</strong>). Para <em>apagar la radio</em>, presione <em>Ctrl+C</em>.</p>
+ directorio <a href="https://github.com/quijot/radio/tree/master/lists" title="Directorio de listas de radios."><strong>lists</strong></a>). Para <em>apagar la radio</em>, presione <em>Ctrl+C</em>.</p>
 
 <p>Si ejecuta</p>
 
 <pre><code>$ ./radio
 </code></pre>
 
-<p>se <strong>imprime la ayuda</strong> y la lista de radios disponible.</p>
+<p>se <strong>imprime la ayuda</strong> y todas las listas de radios en el directorio <a href="https://github.com/quijot/radio/tree/master/lists" title="Directorio de listas de radios."><em>lists</em></a>.</p>
 
 <h2>Listas de radios</h2>
 
 <p>Se administran en archivos con extensión <em>.list</em>.</p>
 
 <p>Dentro del directorio donde está <strong>radio</strong>, debería encontrarse un directorio
- llamado <em>lists</em> y allí dentro, un archivo oculto llamado <em>.default.list</em>.</p>
+ llamado <a href="https://github.com/quijot/radio/tree/master/lists" title="Directorio de listas de radios."><em>lists</em></a> y allí dentro, un archivo oculto llamado <a href="https://raw.github.com/quijot/radio/master/lists/.default.list" title="Lista de radios por defecto."><em>.default.list</em></a>.</p>
 
 <h3>Agregar radios</h3>
 
-<p>Para agregar información de radios puede editar <em>.default.list</em> o agregar
- archivos <em>.list</em> con el mismo formato interno de <em>.default.list</em>, por ejemplo,
- se adjunta también <em>ar.list</em> con radios de Argentina.</p>
+<p>Para agregar información de radios puede editar <a href="https://raw.github.com/quijot/radio/master/lists/.default.list" title="Lista de radios por defecto."><em>.default.list</em></a> o agregar
+ archivos <em>.list</em> con el mismo formato interno de <a href="https://raw.github.com/quijot/radio/master/lists/.default.list" title="Lista de radios por defecto."><em>.default.list</em></a>, por ejemplo,
+ se adjunta también <a href="https://raw.github.com/quijot/radio/master/lists/ar.list" title="Lista de radios de Argentina."><em>ar.list</em></a> con radios de Argentina.</p>
 
-<p>Dentro de <em>.default.list</em> está indicado cómo agregar la información:</p>
+<p>Dentro de <a href="https://raw.github.com/quijot/radio/master/lists/.default.list" title="Lista de radios por defecto."><em>.default.list</em></a> está indicado cómo agregar la información:</p>
 
 <pre><code>Para agregar una radio agregue una línea:
     radio_id: radio_name|radio_url
@@ -101,7 +111,7 @@ Por ejemplo:
 
 <p><strong>radio</strong> se encuentra bajo los términos de la Beer-ware License (Revision 42).
 Para mayor información leer
- <a href="https://raw.github.com/quijot/radio/master/LICENSE">LICENSE</a>.</p>
+<a href="https://raw.github.com/quijot/radio/master/LICENSE">LICENSE</a>.</p>
       </section>
       <footer>
         <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
