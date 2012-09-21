@@ -13,7 +13,7 @@
 #
 
 from sys import argv
-from os import walk
+from os import walk, path
 from subprocess import call
 
 #
@@ -24,7 +24,9 @@ radios = {
 # 'radio_id': ('radio_name', 'radio_url'),
 }
 
-lists_path = './lists/'
+script_path = path.dirname(__file__) + '/'
+
+lists_path = script_path + 'lists/'
 lists_extension = '.list'
 lists = []
 
@@ -54,8 +56,9 @@ for l in lists:
 #
 
 print 'radio, un script python para escuchar la radio con mplayer'
-lic = open('LICENSE')
+lic = open(script_path + 'LICENSE')
 print lic.read()
+lic.close()
 
 #
 # si falta algo imprime ayuda, si no "prende la radio"
