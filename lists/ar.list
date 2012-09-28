@@ -13,11 +13,10 @@
 #   ahijuna: Radio Ahijuna FM 94.7|mms://200.110.208.108/ahijunafm
 
 ahijuna: Radio Ahijuna FM 94.7|mms://200.110.208.108/ahijunafm
-city: Radio City FM 107.1 Jujuy|http://69.65.102.148:8000/
-delplata: Del Plata AM 1030|mms://active.telecomcdn.com/delplata/delplata
+delplata: Del Plata AM 1030|mmsh://186.153.1.18/5daaqaibcqmuai2ec0qqdyugfkncu0qg
 delplataros: Del Plata Rosario FM 107.5|mms://media203.services.digitar.net/delplatarosario
 kehuelga: K-HUELGA Radio libre y social FM 102.9|http://www.kehuelga.org:8000/radio.mp3
-la100: La100 FM 99.9|http://crp02c.cienradios.com.ar/la100.mp3
+la100: La 100 FM 99.9|http://buecrplb01.cienradios.com.ar/la100.mp3
 lared: La Red AM 910|mms://lared.wms.sinectis.com.ar/laredam910
 laredros: La Red Rosario FM 102.7|mms://media203.services.digitar.net/lared
 latribu: FM La Tribu 88.7|http://vivo.fmlatribu.com:8000/latribu.mp3
@@ -27,6 +26,8 @@ mega: Mega FM 98.3|http://mega.telecomdatacenter.com.ar/mega
 metro: Metro FM 95.1|mms://201.212.5.144/metro
 mitre: Radio Mitre AM 790|mms://streammitre.uigc.net/mitrevivo
 nac: Radio Nacional AM 870|http://37.59.19.104:8010/
+nacrosfm: Radio Nacional Rosario FM 104.5|http://37.59.19.104:8170/
+nacrosam: Radio Nacional Rosario AM 1300|http://37.59.19.104:8026/
 quilpo: Radio Quilpo|http://200.58.112.154:9510/
 radio10: Radio 10 AM 710|mms://radio10.telecomdatacenter.com.ar/radio10
 rp: Rock&Pop FM 95.9|http://201.212.5.144/audio959-rockandpop
