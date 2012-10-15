@@ -73,7 +73,7 @@ if len(argv) < 2 or radios.get(argv[1],'error') == 'error':
   lista.sort()
   for i in lista:
     print i, '\n  ', radios[i][0], '(' + radios[i][1] + ')'
-  print "\n(Para 'apagar la radio', presione Ctrl+C)"
+  print "\n(Para 'apagar la radio', presione q)"
 else:
   radio_id = argv[1]
   url = 1
