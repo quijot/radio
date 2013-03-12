@@ -81,6 +81,4 @@ if len(argv) < 2 or radios.get(argv[1],'error') == 'error':
 else:
   radio_id = argv[1]
   url = 1
-  call(['mplayer', '-af', 'lavcresample=44100', '-cache', '32', \
-    radios[radio_id][url]])
-
+  call(['mplayer', '--cache=128', radios[radio_id][url]])
