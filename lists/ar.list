@@ -12,25 +12,29 @@
 # Por ejemplo:
 #   ahijuna: Radio Ahijuna FM 94.7|mms://200.110.208.108/ahijunafm
 
-ahijuna: Radio Ahijuna FM 94.7|mms://200.110.208.108/ahijunafm
-dp: Del Plata AM 1030|mmsh://186.153.1.18/5daaqaibcqmuai2ec0qqdyugfkncu0qg
-dpros: Del Plata Rosario FM 107.5|mms://media203.services.digitar.net/delplatarosario
+airelibre: Aire Libre FM 91.3|http://95.154.254.81:31438
+#dp: Del Plata AM 1030|mmsh://186.153.1.18/5daaqaibcqmuai2ec0qqdyugfkncu0qg o mms://active.telecomcdn.com/delplata/delplata
+dpros: Del Plata Rosario FM 107.5|http://media203.services.digitar.net/delplatarosario
 elmundo: Radio El Mundo AM 1070|http://184.107.240.26:8010/vivo
+eter: radio eter|http://sc01.server54.net:7184
+eter+: radio eter plus|http://sc01.server54.net:7172
 khuelga: K-HUELGA Radio libre y social FM 102.9|http://www.kehuelga.org:8000/radio.mp3
 la100: La 100 FM 99.9|http://buecrplb01.cienradios.com.ar/la100.mp3
-lared: La Red AM 910|mms://lared.wms.sinectis.com.ar/laredam910
-laredros: La Red Rosario FM 102.7|mms://media203.services.digitar.net/lared
+#lared: La Red AM 910|rtmp://vivolared.multimediosamerica.com.ar/streamlared/&streamId=lared
+laredros: La Red Rosario FM 102.7|http://media203.services.digitar.net/lared
 latribu: FM La Tribu 88.7|http://vivo.fmlatribu.com:8000/latribu.mp3
-lt3: LT3 AM 680|mms://media203.services.digitar.net/lt3
-lt8: LT8 AM 830|mms://media203.services.digitar.net/lt8
-mega: Mega FM 98.3|http://mega.telecomdatacenter.com.ar/mega
-metro: Metro FM 95.1|mms://201.212.5.144/metro
-mitre: Radio Mitre AM 790|mms://streammitre.uigc.net/mitrevivo
+lt2: Radio 2 AM 1230|http://209.160.20.34/radio2
+lt3: LT3 AM 680|http://media203.services.digitar.net/lt3
+lt8: La Ocho LT8 AM 830|http://media203.services.digitar.net/lt8
+madres: Radio de las Madres|mplayer http://200.68.81.65:8000/am530
+metro: Metro FM 95.1|http://201.212.5.144/metro
+mitre: Radio Mitre AM 790|http://buecrplb01.cienradios.com.ar/Mitre790.mp3
 nac: Radio Nacional AM 870|http://37.59.19.104:8010/
 nacrosfm: Radio Nacional Rosario FM 104.5|http://37.59.19.104:8170/
 nacrosam: Radio Nacional Rosario AM 1300|http://37.59.19.104:8026/
 quilpo: Radio Quilpo|http://200.58.112.154:9510/
-radio10: Radio 10 AM 710|mms://radio10.telecomdatacenter.com.ar/radio10
+rnma: Red Nacional de Medios Alternativos|http://radio.nodo50.org:8000/mediosalter.mp3
+redtl: Red TL FM 105.5|rtmp://98.158.181.21:1935/radio/redtl
 rp: Rock&Pop FM 95.9|http://201.212.5.144/audio959-rockandpop
 unr: Radio Universidad UNR FM 103.3|http://nubroadcast.com:8000/radio016.aac
-vorterix: Vorterix|http://www.vorterix.com/vivo/video_integrado/QR-Vorterix.php
+#vorterix: Vorterix|http://www.vorterix.com/vivo/video_integrado/QR-Vorterix.php
