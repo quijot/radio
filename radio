@@ -85,8 +85,4 @@ else:
     cache = '32'
   radio_id = argv[1]
   url = 1
-<<<<<<< HEAD
   call(['mplayer', '-cache', cache, radios[radio_id][url]])
-=======
-  call(['mplayer', '-cache', '128', radios[radio_id][url]])
->>>>>>> 00e8f6706f2060a9d2c52ff415b8becb127b19fb
