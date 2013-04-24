@@ -2,9 +2,9 @@
 # -*- coding: UTF-8 -*- 
 # ----------------------------------------------------------------------------
 # "THE BEER-WARE LICENSE" (Revision 42):
-# Santiago Pestarini <santiagonob@gmail.org> escribió este archivo. Siempre
-# que mantengas este aviso, podés hacer lo que quieras con este material. Si
-# algún día nos encontramos, y pensás que este material lo vale, podés
+# Santiago Pestarini <santiagonob@gmail.org> escribiï¿½ este archivo. Siempre
+# que mantengas este aviso, podï¿½s hacer lo que quieras con este material. Si
+# algï¿½n dï¿½a nos encontramos, y pensï¿½s que este material lo vale, podï¿½s
 # invitarme una cerveza en agradecimiento.
 # ----------------------------------------------------------------------------
 
@@ -52,7 +52,7 @@ for l in lists:
   f.close()
 
 #
-# imprimir información de licencia
+# imprimir informaciï¿½n de licencia
 #
 
 print('radio, un script python para escuchar la radio con mplayer')
@@ -85,4 +85,8 @@ else:
     cache = '32'
   radio_id = argv[1]
   url = 1
+<<<<<<< HEAD
   call(['mplayer', '-cache', cache, radios[radio_id][url]])
+=======
+  call(['mplayer', '-cache', '128', radios[radio_id][url]])
+>>>>>>> 00e8f6706f2060a9d2c52ff415b8becb127b19fb
