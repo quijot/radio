@@ -57,7 +57,7 @@ for l in lists:
 
 print('radio, un script python para escuchar la radio con mplayer')
 lic = open(script_path + 'LICENSE')
-print lic.read()
+print(lic.read())
 lic.close()
 
 #
@@ -79,6 +79,10 @@ if len(argv) < 2 or radios.get(argv[1],'error') == 'error':
     print(i + tab + radios[i][0] + ' --> ' + radios[i][1])
   print("\n(Para 'apagar la radio', presione q)")
 else:
+  if len(argv) == 3:
+    cache = str(int(argv[2]))
+  else:
+    cache = '32'
   radio_id = argv[1]
   url = 1
-  call(['mplayer', '--cache=128', radios[radio_id][url]])
+  call(['mplayer', '-cache', cache, radios[radio_id][url]])
