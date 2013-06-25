@@ -13,7 +13,8 @@
 #
 
 from sys import argv
-from os import walk, path, system
+from os import walk, path
+from subprocess import call
 
 #
 # actualiza el diccionario de radios buscando los archivos .list en ./lists
@@ -60,29 +61,16 @@ print((lic.read()))
 lic.close()
 
 #
-# Usage
-#
-
-usage = 'Uso:\n\
- # Reproducir una radio\n\n\
-   $ radio <radio_id> [<cache-size-in-kb>]\n\
-     donde\n\
-       <cache-size-in-kb> es opcional (>32) y es 32 por defecto,\n\
-       y <radio_id> debe estar en las listas de radios.\n\n\
-     Para "apagar la radio", presione q.\n\n\
- # Listar las radios\n\n\
-   $ radio list\n\n\
-   Para agregar radios a la lista, leer README\n'
-
-#
 # si falta algo imprime ayuda, si no "prende la radio"
 #
 
-if len(argv) < 2:
-    # imprime la ayuda
-    print(usage)
-elif argv[1] == 'list':
-    # imprime el contenido de las listas
+if len(argv) < 2 or radios.get(argv[1], 'error') == 'error':
+    print('Uso:\n\
+      $ radio <radio_id> [<cache-size-in-kb>]\n\
+    donde\n\
+      <cache-size-in-kb> es opcional (>32) y es 32 por defecto,\n\
+      y <radio_id> debe estar en la siguiente lista:\n')
+    print('(Para agregar radios a la lista, lea README)\n')
     lista = list(radios.keys())
     lista.sort()
     for i in lista:
@@ -91,16 +79,17 @@ elif argv[1] == 'list':
         else:
             tab = '\t\t'
         print((i + tab + radios[i][0] + ' --> ' + radios[i][1]))
+    print("\n(Para 'apagar la radio', presione q)")
 else:
-    if radios.get(argv[1], 'error') == 'error':
-        print(usage)
+    if len(argv) == 3:
+        cache = str(int(argv[2]))
     else:
-        # prepara los argumentos
-        radio_id = argv[1]
-        url = 1
-        cache = (str(int(argv[2])) if len(argv) == 3 else ' 32 ')
-        # Soporte para listas de reproducción
-        ext = radios[radio_id][url][-4:]
-        playlist = (' -playlist ' if ext in ('.pls', '.m3u', '.asx') else ' ')
-        # reproduce la radio
-        system('mplayer -cache ' + cache + playlist + radios[radio_id][url])
+        cache = '32'
+    radio_id = argv[1]
+    url = 1
+    # Soporte para listas de reproducción
+    ext = radios[radio_id][url][-3:]
+    if ext in ('pls', 'm3u', 'asx'):
+        call(['mplayer', '-cache', cache, '-playlist', radios[radio_id][url]])
+    else:
+        call(['mplayer', '-cache', cache, radios[radio_id][url]])
