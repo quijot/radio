@@ -1,10 +1,10 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 # -*- coding: UTF-8 -*- 
 # ----------------------------------------------------------------------------
 # "THE BEER-WARE LICENSE" (Revision 42):
-# Santiago Pestarini <santiagonob@gmail.org> escribi� este archivo. Siempre
-# que mantengas este aviso, pod�s hacer lo que quieras con este material. Si
-# alg�n d�a nos encontramos, y pens�s que este material lo vale, pod�s
+# Santiago Pestarini <santiagonob@gmail.org> escribió este archivo. Siempre
+# que mantengas este aviso, podés hacer lo que quieras con este material. Si
+# algún día nos encontramos, y pensás que este material lo vale, podés
 # invitarme una cerveza en agradecimiento.
 # ----------------------------------------------------------------------------
 
@@ -52,7 +52,7 @@ for l in lists:
   f.close()
 
 #
-# imprimir informaci�n de licencia
+# imprimir información de licencia
 #
 
 print('radio, un script python para escuchar la radio con mplayer')
@@ -85,11 +85,9 @@ else:
     cache = '32'
   radio_id = argv[1]
   url = 1
-
-# Soporte para listas de reproducción
-ext = radios[radio_id][url][-3:]
-if ext == 'pls' or ext == 'm3u' or ext == 'asx':
-  call(['mplayer', '-cache', cache, '-playlist', radios[radio_id][url]])
-else:
-  call(['mplayer', '-cache', cache, radios[radio_id][url]])
-
+  # Soporte para listas de reproducción
+  ext = radios[radio_id][url][-3:]
+  if ext in ('pls', 'm3u', 'asx'):
+    call(['mplayer', '-cache', cache, '-playlist', radios[radio_id][url]])
+  else:
+    call(['mplayer', '-cache', cache, radios[radio_id][url]])
