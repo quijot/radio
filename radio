@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: UTF-8 -*- 
+# -*- coding: UTF-8 -*-
 # ----------------------------------------------------------------------------
 # "THE BEER-WARE LICENSE" (Revision 42):
 # Santiago Pestarini <santiagonob@gmail.org> escribió este archivo. Siempre
@@ -32,24 +32,24 @@ lists = []
 
 # arma lista de archivos .list
 for base, dirs, files in walk(lists_path):
-  for name in files:
-    if name.endswith(lists_extension):
-      lists.append(name)
+    for name in files:
+        if name.endswith(lists_extension):
+            lists.append(name)
 # ordena alfabeticamente los nombres de los .list
 lists.sort()
 
 # actualiza el dict radios con la info de todos los .list
 for l in lists:
-  f = open(lists_path + l)
-  for entry in f:
-    if not entry.startswith('#') and len(entry.strip()) != 0 \
-      and entry.find(':') != -1 and entry.find('|') != -1 :
-      radio_id = entry.partition(':')[0].strip()
-      radio_info = entry.partition(':')[2].strip()
-      radio_name = radio_info.partition('|')[0].strip()
-      radio_url = radio_info.partition('|')[2].strip()
-      radios.update({radio_id : (radio_name, radio_url)})
-  f.close()
+    f = open(lists_path + l)
+    for entry in f:
+        if not entry.startswith('#') and len(entry.strip()) != 0 \
+                and entry.find(':') != -1 and entry.find('|') != -1:
+            radio_id = entry.partition(':')[0].strip()
+            radio_info = entry.partition(':')[2].strip()
+            radio_name = radio_info.partition('|')[0].strip()
+            radio_url = radio_info.partition('|')[2].strip()
+            radios.update({radio_id: (radio_name, radio_url)})
+    f.close()
 
 #
 # imprimir información de licencia
@@ -57,37 +57,37 @@ for l in lists:
 
 print('radio, un script python para escuchar la radio con mplayer')
 lic = open(script_path + 'LICENSE')
-print(lic.read())
+print((lic.read()))
 lic.close()
 
 #
 # si falta algo imprime ayuda, si no "prende la radio"
 #
 
-if len(argv) < 2 or radios.get(argv[1],'error') == 'error':
-  print('Uso:\n\
-    $ radio <radio_id>\n\
-  donde <radio_id> debe estar en la siguiente lista:\n')
-  print('(Para agregar radios a la lista, lea README)\n')
-  lista = radios.keys()
-  lista.sort()
-  for i in lista:
-    if len(i) >= 8:
-      tab = '\t'
-    else:
-      tab = '\t\t'
-    print(i + tab + radios[i][0] + ' --> ' + radios[i][1])
-  print("\n(Para 'apagar la radio', presione q)")
+if len(argv) < 2 or radios.get(argv[1], 'error') == 'error':
+    print('Uso:\n\
+      $ radio <radio_id>\n\
+    donde <radio_id> debe estar en la siguiente lista:\n')
+    print('(Para agregar radios a la lista, lea README)\n')
+    lista = list(radios.keys())
+    lista.sort()
+    for i in lista:
+        if len(i) >= 8:
+            tab = '\t'
+        else:
+            tab = '\t\t'
+        print((i + tab + radios[i][0] + ' --> ' + radios[i][1]))
+    print("\n(Para 'apagar la radio', presione q)")
 else:
-  if len(argv) == 3:
-    cache = str(int(argv[2]))
-  else:
-    cache = '32'
-  radio_id = argv[1]
-  url = 1
-  # Soporte para listas de reproducción
-  ext = radios[radio_id][url][-3:]
-  if ext in ('pls', 'm3u', 'asx'):
-    call(['mplayer', '-cache', cache, '-playlist', radios[radio_id][url]])
-  else:
-    call(['mplayer', '-cache', cache, radios[radio_id][url]])
+    if len(argv) == 3:
+        cache = str(int(argv[2]))
+    else:
+        cache = '32'
+    radio_id = argv[1]
+    url = 1
+    # Soporte para listas de reproducción
+    ext = radios[radio_id][url][-3:]
+    if ext in ('pls', 'm3u', 'asx'):
+        call(['mplayer', '-cache', cache, '-playlist', radios[radio_id][url]])
+    else:
+        call(['mplayer', '-cache', cache, radios[radio_id][url]])
