@@ -85,4 +85,11 @@ else:
     cache = '32'
   radio_id = argv[1]
   url = 1
+
+# Soporte para listas de reproducción
+ext = radios[radio_id][url][-3:]
+if ext == 'pls' or ext == 'm3u' or ext == 'asx':
+  call(['mplayer', '-cache', cache, '-playlist', radios[radio_id][url]])
+else:
   call(['mplayer', '-cache', cache, radios[radio_id][url]])
+
